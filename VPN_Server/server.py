@@ -88,8 +88,8 @@ def client_program():
         print("The directory does not exist")
         client_socket.close()
 
-    file_size = os.path.getsize(r'/etc/openvpn/server/tc.key')
-    client_socket.send(str(file_size).encode('utf8'))
+    #file_size = os.path.getsize(r'/etc/openvpn/server/tc.key')
+    #client_socket.send(str(file_size).encode('utf8'))
 
     client_socket.close()
     exit(1)
