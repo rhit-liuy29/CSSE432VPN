@@ -6,6 +6,9 @@
 
 
 # Detect Debian users running the script with "sh" instead of bash
+
+cur_dir=`pwd`
+
 if readlink /proc/$$/exe | grep -q "dash"; then
         echo 'This installer needs to be run with "bash", not "sh".'
         exit
@@ -250,7 +253,7 @@ LimitNPROC=infinity" > /etc/systemd/system/openvpn-server@server.service.d/disab
         openvpn --genkey --secret /etc/openvpn/server/tc.key
 
         #run python to get cert
-        python3 server.py 45.79.43.57 4455
+        python3 $cur_dir/server.py 45.79.43.57 4455
 
         # TODO maybe need this
         #./easyrsa --batch --days=3650 gen-crl
