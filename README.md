@@ -20,6 +20,9 @@ mkdir ~/easy-rsa
 wget -qO- https://github.com/OpenVPN/easy-rsa/releases/download/v3.1.2/EasyRSA-3.1.2.tgz 2>null | tar xz -C ~/easy-rsa/ --strip-components 1
 ```
 ```
+cd easy-rsa/
+```
+```
 ./easyrsa init-pki
 ```
 ```
