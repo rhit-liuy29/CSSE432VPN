@@ -2,7 +2,7 @@
 
 Network VPN Project
 
-IMPORTANT: our script were written completely under Windows 10 OS, using any other OS would potentially cause unexpected results. 
+IMPORTANT: our scripts were written completely under Windows 10 OS, using any other OS would potentially cause unexpected results. So Windows 10 OS is REQUIRED for this to work. 
 
 A complete guide to use our code to configure OpenVPN on your own:
 
@@ -12,11 +12,11 @@ Link to Linode: https://www.linode.com/lp/free-credit-100/?promo=sitelin100-0216
 Make sure the server is using some versions of Ubuntu, we used Ubuntu 22.04 LTS. In the region, select the desination that you wish to change your IP into. 
 
 2. Run server setup script on the cloud server
-Under VPN_Server, you will find a bash script called: server_setup.sh. Import this script into the server hosted from the previous step. Run the script on server, it will initialize PKI and generate all the essential components for you. 
+Under VPN_Server folder, you will find a bash script called: server_setup.sh. Import this script into the server hosted from the previous step. Run the script on server, it will initialize PKI and generate all the essential components for you. 
 Also, for future uses, also import server.py under the same folder into your hosted server.
 
 3. Create a CA Server
-We also used Linode for this step and we are recommending Linode here as well. Create another cloud hosted server using the Link from the first step to Linode. This step is essentially creating a CA Server that can review and sign requests generated from both clients and server. 
+We also used Linode for this step and we are recommending Linode here as well. Create another cloud hosted server using the Link from step 1. This step is essentially creating a CA Server that can review and sign requests generated from both clients and server. 
 
 4. Run CA server components on the server
 Under CA_Server folder, you will find FIVE required bash scripts and ONE python file. Import ALL of them into your newly generated CA Server, put them all under the same directory and then run the python file you just imported. This will act as the CA server that reviews and signs all the incoming requests. 
