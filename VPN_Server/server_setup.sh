@@ -253,8 +253,8 @@ LimitNPROC=infinity" > /etc/systemd/system/openvpn-server@server.service.d/disab
         openvpn --genkey --secret /etc/openvpn/server/tc.key
 
         #run python to get cert
-		read -p "What is the IP address of CA Server" CA_IP
-		read -p "What is the Port of CA Server" CA_PORT
+		read -p "What is the IP address of CA Server " CA_IP
+		read -p "What is the Port of CA Server " CA_PORT
         python3 $cur_dir/server.py $CA_IP $CA_PORT
 
         # TODO maybe need this
