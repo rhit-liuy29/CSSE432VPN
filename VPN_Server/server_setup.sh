@@ -1,7 +1,7 @@
 #!/bin/bash
 #
 # mainly from https://github.com/Nyr/openvpn-install
-#
+# We modified the script to run our own python script and separated CA and client generation from VPN server
 # Copyright (c) 2013 Nyr. Released under the MIT License.
 
 
