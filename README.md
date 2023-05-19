@@ -2,7 +2,7 @@
 
 Network VPN Project
 
-IMPORTANT: out script were written completely under Windows 10 OS, using any other OS would potentially cause unexpected results. 
+IMPORTANT: our script were written completely under Windows 10 OS, using any other OS would potentially cause unexpected results. 
 
 A complete guide to use our code to configure OpenVPN on your own:
 
