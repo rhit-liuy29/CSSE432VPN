@@ -17,7 +17,7 @@ Type these commands into your command line on CA Server:
 mkdir ~/easy-rsa
 ```
 ```
-wget -qO- https://github.com/OpenVPN/easy-rsa/releases/download/v3.1.2/EasyRSA-3.1.2.tgz 2> | tar xz -C ~/easy-rsa/ --strip-components 1
+wget -qO- https://github.com/OpenVPN/easy-rsa/releases/download/v3.1.2/EasyRSA-3.1.2.tgz 2>null | tar xz -C ~/easy-rsa/ --strip-components 1
 ```
 ```
 ./easyrsa init-pki
