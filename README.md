@@ -12,7 +12,8 @@ Link: https://www.linode.com/lp/free-credit-100/?promo=sitelin100-02162023&promo
 Make sure the server is using some versions of Ubuntu, we used Ubuntu 22.04 LTS. In the region, select the desination that you wish to change your CA Server to be in.
 
 2. Run CA server components on the server <br />
-Under CA_Server folder, you will find FIVE required bash scripts and ONE python file. Import ALL of them into your newly generated CA Server, put them all under the same directory and then run the python file you just imported. This will act as the CA server that reviews and signs all the incoming requests. 
+Under CA_Server folder, you will find FIVE required bash scripts and ONE python file. Import ALL of them into your newly generated CA Server, put them all under the same directory and then run the python file you just imported. This will act as the CA server that reviews and signs all the incoming requests. Afterwards, type these two commands into the CA Server command line: ./easyrsa init-pki
+./easyrsa build-ca
 KEEP THIS SERVER OPEN UNTIL YOU ARE DONE WITH ALL REQUESTS
 
 3. Create a Server IP address <br />
