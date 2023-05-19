@@ -36,13 +36,13 @@ We used Linode as our cloud server hosting service, that's why we would also rec
 Make sure the server is using some versions of Ubuntu, we used Ubuntu 22.04 LTS. In the region, select the desination that you wish to change your IP address into.
 
 5. Run server setup script on the cloud server <br />
-Under VPN_Server folder, you will find a bash script called: server_setup.sh. Import this script alongside with server.py in the same folder into the server hosted from the previous step. Run the script on server, it will initialize PKI and generate all the essential components for you. 
+Under VPN_Server folder, you will find a bash script called: server_setup.sh. Import this script alongside with server.py in the same folder into the server hosted from the previous step. Run the script on server, it will initialize PKI and generate all the essential components for you. When asked about CA Server IP and port, just enter the corresponding ones that you had for your CA Server. 
 
 6. Sign server request <br />
 The python script should take care of this step automatically. You will receive a signed crt file under /easyrsa/pki/issued/ directory if all goes well. Also, logs will also be generated to help you identify what is wrong. 
 
 7. Run client setup script locally <br />
-Under VPN_Client folder, you will find a bash script setup.bat alongside a client.py python script. Download both of them into your local directory and place them under the same directory. Open CMD or Powershell, navigate to that directory and run the bash script setup.bat. This will download and unpack EasyRsa for you locally and generate a client requests that will be used for CA Server to sign. Again, logs will be generated to help you identify what went wrong. MAKE SURE CLIENT.PY IS UNDER THE SAME DIRECTORY.
+Under VPN_Client folder, you will find a bash script setup.bat alongside a client.py python script. Download both of them into your local directory and place them under the same directory. Open CMD or Powershell, navigate to that directory and run the bash script setup.bat. This will download and unpack EasyRsa for you locally and generate a client requests that will be used for CA Server to sign. Again, logs will be generated to help you identify what went wrong. When asked about CA Server IP and port, just enter the corresponding ones that you had for your CA Server. MAKE SURE CLIENT.PY IS UNDER THE SAME DIRECTORY.
 
 8. Download OpenVPN Connect UI <br />
 Now all the components are ready to go, download and install OpenVPN from the link below first.
