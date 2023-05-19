@@ -12,9 +12,22 @@ Link: https://www.linode.com/lp/free-credit-100/?promo=sitelin100-02162023&promo
 Make sure the server is using some versions of Ubuntu, we used Ubuntu 22.04 LTS. In the region, select the desination that you wish to change your CA Server to be in.
 
 2. Run CA server components on the server <br />
-Under CA_Server folder, you will find FIVE required bash scripts and ONE python file. Import ALL of them into your newly generated CA Server, put them all under the same directory and then run the python file you just imported. This will act as the CA server that reviews and signs all the incoming requests. Afterwards, type these two commands into the CA Server command line: ./easyrsa init-pki
-./easyrsa build-ca
-KEEP THIS SERVER OPEN UNTIL YOU ARE DONE WITH ALL REQUESTS
+Under CA_Server folder, you will find FIVE required bash scripts and ONE python file. Import ALL of them into your newly generated CA Server, put them all under the same directory and then run the python file you just imported. This will act as the CA server that reviews and signs all the incoming requests. Afterwards, type these commands into the CA Server command line: 
+
+```
+mkdir ~/easy-rsa
+```
+```
+wget -qO- https://github.com/OpenVPN/easy-rsa/releases/download/v3.1.2/EasyRSA-3.1.2.tgz 2> | tar xz -C ~/easy-rsa/ --strip-components 1
+```
+```
+./easyrsa init-pki
+```
+```
+./easyrsa build-ca nopass
+```
+
+KEEP THIS SERVER OPEN UNTIL YOU ARE DONE WITH ALL REQUESTS<br />
 
 3. Create a Server IP address <br />
 We used Linode as our cloud server hosting service, that's why we would also recommend using Linode to do this. This step is essentially creating a cloud server that act as the destination IP when running the VPN. Create a new Linode just like what you did in step 1.
