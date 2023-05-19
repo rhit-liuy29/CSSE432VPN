@@ -41,4 +41,6 @@
 	
 	cd %mypath%
 	
-    python client.py 45.79.43.57 4455
+	set /p CA_IP=What is the IP address of CA Server? 
+	set /p CA_PORT=What is the port of CA Server? 
+    python client.py %CA_IP% %CA_PORT%
