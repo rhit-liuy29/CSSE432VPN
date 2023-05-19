@@ -9,7 +9,21 @@ A complete guide to use our code to configure OpenVPN on your own:
 1. Create a CA Server <br />
 We used Linode for this step and we are recommending Linode here as well. Create a new Linode from there. This step is essentially creating a CA Server that can review and sign requests generated from both clients and server. <br />
 Link: https://www.linode.com/lp/free-credit-100/?promo=sitelin100-02162023&promo_value=100&promo_length=60&utm_source=google&utm_medium=cpc&utm_campaign=11178784975_109179237043&utm_term=g_kwd-2629795801_e_linode&utm_content=466889956453&locationid=1017332&device=c_c&gclid=Cj0KCQjwmZejBhC_ARIsAGhCqnc4Q_5nuQPPVmH4cYGPt52DKIZo0YzBMU7XanelmhImg-ddZiz19boaAlSaEALw_wcB <br />
-Make sure the server is using some versions of Ubuntu, we used Ubuntu 22.04 LTS. In the region, select the desination that you wish to change your CA Server to be in.
+Make sure the server is using some versions of Ubuntu, we used Ubuntu 22.04 LTS. In the region, select the desination that you wish to change your CA Server to be in.<br />
+After creating the CA Server, you'll need a new user other the default root user. <br />
+Simply create a new user on the server by typing these commands into your command lines: 
+```
+useradd -G sudo -m rose -s /bin/bash
+```
+```
+passwd rose
+```
+Here, enter the password that you want to use for your new non-root user. Make sure to keep track of this password somewhere. <br />
+Afterwards, exit from the current server and re-login as the new non-root user: 
+```
+ssh rose@<YOUR CA SERVER IP>
+```
+Enter the password you just set and you are ready to proceed.
 
 2. Setup easy-rsa on CA Server <br />
 Type these commands into your command line on CA Server:
@@ -29,9 +43,9 @@ cd easy-rsa/
 ./easyrsa build-ca nopass
 ```
 
-
 3. Run CA server components on the server <br />
-Under CA_Server folder, you will find FIVE required bash scripts and ONE python file. Import ALL of them into your newly generated CA Server, put them all under the same directory and then run the python file you just imported. This will act as the CA server that reviews and signs all the incoming requests.
+IMPORTANT: Before doing this step, make sure python3 is installed on your server<br />
+Under CA_Server folder, you will find FIVE required bash scripts and ONE python file. Import ALL of them into your newly generated CA Server, put them all under the same directory WITH EASYRSA and then run the python file you just imported. This will act as the CA server that reviews and signs all the incoming requests.
 KEEP THIS SERVER OPEN UNTIL YOU ARE DONE WITH ALL REQUESTS
 
 4. Create a Server IP address <br />
@@ -39,6 +53,7 @@ We used Linode as our cloud server hosting service, that's why we would also rec
 Make sure the server is using some versions of Ubuntu, we used Ubuntu 22.04 LTS. In the region, select the desination that you wish to change your IP address into.
 
 5. Run server setup script on the cloud server <br />
+IMPORTANT: Before doing this step, make sure python3 is installed on your server<br />
 Under VPN_Server folder, you will find a bash script called: server_setup.sh. Import this script alongside with server.py in the same folder into the server hosted from the previous step. Run the script on server, it will initialize PKI and generate all the essential components for you. When asked about CA Server IP and port, just enter the corresponding ones that you had for your CA Server. 
 
 6. Sign server request <br />
