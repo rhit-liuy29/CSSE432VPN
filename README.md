@@ -34,4 +34,4 @@ Now all the components are ready to go, download and install OpenVPN from the li
 Link: https://openvpn.net/client/client-connect-vpn-for-windows/
 After installing OpenVPN Connect into your machine, you will see a running application among your hidden icons in your taskbar. Click that icon to open the UI. Click on the drawer icon at the top-left corner of the UI, go to "Import File" and select "File". Import the local ovpn file that you just created in step 6. When this is done, you are ready to go, simply switch on the profile and you are connected!
 
-A quick way to test whether your VPN was correctly configured is to go to https://whoer.net/. This will display your current IP. If the website displays your IP as the same one that you've chosen and created in step 1, you are good to go!
+A quick way to test whether your VPN was correctly configured is to go to https://whoer.net/. This will display your current IP. If the website displays your IP as the same one that you've chosen and created in step 3, you are good to go!
