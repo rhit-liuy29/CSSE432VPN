@@ -11,7 +11,7 @@ We used Linode for this step and we are recommending Linode here as well. Create
 Link: https://www.linode.com/lp/free-credit-100/?promo=sitelin100-02162023&promo_value=100&promo_length=60&utm_source=google&utm_medium=cpc&utm_campaign=11178784975_109179237043&utm_term=g_kwd-2629795801_e_linode&utm_content=466889956453&locationid=1017332&device=c_c&gclid=Cj0KCQjwmZejBhC_ARIsAGhCqnc4Q_5nuQPPVmH4cYGPt52DKIZo0YzBMU7XanelmhImg-ddZiz19boaAlSaEALw_wcB
 Make sure the server is using some versions of Ubuntu, we used Ubuntu 22.04 LTS. In the region, select the desination that you wish to change your CA Server to be in.
 
-2. Setup easy-rsa on CA Server
+2. Setup easy-rsa on CA Server <br />
 Type these commands into your command line on CA Server:
 ```
 mkdir ~/easy-rsa
